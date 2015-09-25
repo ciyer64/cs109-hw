@@ -1,29 +1,19 @@
-# 2015hw
+You MAY NOT share this repository to the public.
 
-To make `hw0.ipynb` easily accessible, we added it to the public lab repo, so that you can read it even without having a github account. (Otherwise we would have a chicken and egg problem.). This is because our homework repository is private, and we have set it up so that your repositories are private as well.
+Let me describe the steps by which you gain access to the homework.
 
-Nevertheless, we want you to get acquainted with the workflow you must execute in order to obtain and submit homeworks. 
+1. Our read-only repository is `cs109-students/2015hw`. All students have read-only access to this repository. You can see this homework there under the "hw2" branch. Any changes after the homework has gone out will be made here.
+2. You will have your own read-write repository under the `cs109-students` organization, which will be of the form`cs109-students/githubusername-2015hw`. Only you and the cs109 staff have access to this repository, thus ensuring the privacy of your homework.
+3. This homework is on the hw2 branch. There is `master` branch too, which will have some instructions, but nothing very exciting. You will never work on this branch.
 
-Let me first describe the steps by which you gain access to the homework.
+On the assumption that you followed the appropriate flow for the hw0 branch and have a master and a hw0 branch currently on your computer, this is what you do:
 
-1. At the beginning of this document you were asked to obtain a github id and enter it in the mandatory survey. We will use this github id to construct a homework repository for you with read-write access, and give you access to our read-only homework repository. You will be added to a github organization `cs109-students`.
-2. Our read-only repository is `cs109-students/2015hw`. All students have read-only access to this repository. It will serve the job of the `course` remote, like above. Any changes after the homework has gone out will be made here.
-3. You will have your own read-write repository under the `cs109-students` organization, which will be of the form `cs109-students/userid-2015hw`. Only you and the cs109 staff have access to this repository, thus ensuring the privacy of your homework.
-4. When each homework is released, we will create a **branch** on your remote repository, `cs109-students/userid-2015hw`. The branches are, unimaginatively named: `hw0`, `hw1`,...,`hw5`. (For the curious, the way this works is by us creating one remote per student for a local clone of our `cs109-students/2015hw` repository, and pushing the new branch to it. We only push to a new branch each time as we dont want to be messing with a branch you have already worked on.). There is `master` branch too, which will have some instructions, but nothing very exciting. You will never work on this branch.
+1. First make sure you have submitted hw1 by pushing it, and checking it has been submitted on the web interface. Also copy your hw1.ipynb SOMEWHERE ELSE on your machine, just to be safe.
+2. **FIRST MAKE SURE YOU ARE ON MASTER** by doing `git checkout master` inside your `githubusername-2015hw` folder
+3. Do `git fetch origin hw2`, which fetches from *your* remote repository (named `origin`) on github the `hw2`branch. Then you issue `git checkout -b hw2 origin/hw2`. This command makes a new local branch `hw2` on your machine which tracks the `hw2` branch on your remote.
+4. You are now in the `hw2` branch. This is where you will work on homework 2. Start the ipython notebook in the repository and run the homework. The file you will use is `hw2.ipynb`. DO NOT run the notebook ending in`_original.ipynb`. These are simply copies of the homework. We made these copies so that you can update them from our `course` remote in case we make any changes. You will now engage in the "edit/add/commit/push" cycle as described above. (The `push` will only push to the remote `hw2` branch.) 3.. We'll grade the last commit you make before the homework deadline, which is 12:59AM, Friday, October 9th. We will be looking for the file`hw2.ipynb`.
 
-So now, how to you obtain and submit the homework? You wont be forking here.
+Once again, in case we make changes, you can incorporate them into your repo by doing: `git fetch course; git checkout course/hw2 -- hw2_original.ipynb`. An "add/commit/push" cycle will make sure these changes go into your fork as well. If you have already started working, it might be easiest to manually copy the changes into hw2.ipynb. Remember, thats the file we are looking for, NOT, `hw2_original.ipynb`
 
-1. You first make a clone of your repository. From the terminal, you issue the command: `git clone git@github.com:cs109-students/userid-2015hw.git` (for ssh users) or `git clone https://github.com/cs109-students/userid-2015hw.git` (for https users). Substitute your own userid for `userid`.
-2. Next you add a remote `course` to track the read-only "guru" repository. The command for this is: `git remote add course git@github.com:cs109-students/2015hw.git` or `git remote add course https://github.com/cs109-students/2015hw.git`. This well help to incorporate any changes, just like above.
-3. Your clone will come with a `master` branch, and perhaps a `hw0` branch. In either case you should first do `git fetch origin hw0`, which fetches from *your* remote repository on github the `hw0` branch. Then you issue `git checkout -b hw0 origin/hw0`. This command makes a new local branch `hw0` on your machine which tracks the `hw0` branch on your remote.
-4. You are now in the `hw0` branch. This is where you will work on homework 0. Start the ipython notebook in the repository and run the homework. The file you will use is `hw0.ipynb`. DO NOT run the notebook ending in `_original.ipynb`. These are simply copies of the homework. We made these copies so that you can update them from our `course` remote in case we make any changes. You will now engage in the "add/commit/push" cycle as described above. (The `push` will only push to the remote `hw0` branch.)
-5. We'll grade the last commit you make before the homework deadline. We will be looking for the file `hw0.ipynb`. (In actuality we wont grade homework 0 but check that you submitted it. But we will be using this mechanism to grade the homeworks from homework 1 onwards.)
-6. When we are ready to send out homework 1 to you, we will create a new branch on your remote repository `git@github.com:cs109-students/userid-2015hw.git` on github with the name `hw1`. You will now repeat the process from step 3 onwards: `git fetch origin hw1` followed by `git checkout -b hw1 origin/hw1`. Then you work on the `hw1` branch, and engage in the "add/commit/push" cycle by running `hw1.ipynb`. And so on...
+If you are an advanced git user, it might be safer for you to create a branch off the hw2 branch, like say, play-hw2, and work there. You can then merge it in.
 
-Once again, in case we make changes, you can incorporate them into your repo by doing: `git fetch course; git checkout course/hw0 -- hw0_original.ipynb`. An "add/commit/push" cycle will make sure these changes go into your fork as well. If you intend to work on the changed file `hw0_original.ipynb`, simply copy the file to `hw0.ipynb` and work on it. 
-
-Remember that we will be looking for files `hw0.ipynb`, `hw1.ipynb`,...,`hw5.ipynb` as the semester goes on.
-
-This process is summarized in the diagram below.
-
-![homework](cs109gitflow2.png)
