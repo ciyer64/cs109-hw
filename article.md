@@ -11,14 +11,17 @@ Let's look at the 2014 elections, where, against all odds, the Republicans won 2
 ![image](images/Senate_Seats.png?raw=true)
 Caption: Our results compared to the actual number of seats won (23) - What went wrong?
 
+
 Not a bad start, but the fact that our expected number of seats (i.e. where the bar graph clusters the most - approximately 20) is off by approximately 3 seats (which, out of 23, is a pretty sizable difference) still leaves something to be desired.  So what went wrong?  By simply taking the average across multiple polls from across 2014 leading up to the election, we leave out key information.  For instance, polls taken closer to the election date are *generally* more accurate than polls taken further away.  Furthermore, polls taken across an entire state are better predictors than polls taken across certain cities or counties.  So how do we take these into account?  What we ended up doing was giving different polls different *weights*, such that polls that were more relevant in terms of timeframe or sampling size would play a larger role in calculating the expected number of seats to be won.  We can see our results below.
 
 ![image](images/Senate_Seats_Weighted.png?raw=true)
 Caption: Our results after giving different polls more weight, compared to the actual number of seats won (23).  Close, but can we do better?
+
 
 Okay, so we're doing a bit better.  But is this enough?  What other factors could be interfering with our accuracy?  Well, we talked about the timing of the poll, but timing is a bit more complex than simply how opinions shift, as we should also talk about the context in which events happen.  For instance, after the 8 years of Republican leadership, the 2008 elections illustrated a vast shift in the political status quo, as the Democrats beat out their Republican opponents to score many key victories in the election.  Therefore in the years following, people's opinions were a bit biased by the fact that they wanted a change in leadership.  So how do we address this abstract concept?  I will spare you some of the more specific details, but some of our smart statistician friends at the Huffington Post were actually able to "quantify" this bias (i.e. give it a numerical value that makes it relevant to our data), thus allowing us to account for it in our predictions.  Taking this bias factor into account, as well as our previously weighted polls, we plot the data once again.
 
 ![image](images/Senate_Seats_Weighted_Unbiased.png?raw=true)
 Caption: Our results after giving different polls more weight and removing a bias factor, compared to the actual number of seats won (23).  Not bad!
 
-This actually looks pretty good!
+
+Look at the difference now - we are only off by just 1 seat!
