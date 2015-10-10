@@ -5,6 +5,7 @@ Probability is everywhere.  From everyday tasks like checking the weather, to mo
 But how accurate are these polls?  Often times people are skeptical of what polls say, as there are numerous factors that can potentially skew the results, such as who is responding to these polls and how opinions change over time.  From here on we will refer to these factors *biases*.  I will make the case to you, the reader, that polls are in fact very accurate in predicting election results; we just have to be diligent in the way that we interpret the data, for it is much more complex than what is presented at face value.
 
 ![image](images/Senate_Seats.png?raw=true)
+Caption: The bar graph represents the distribution for how many seats we think the Republicans will win, while the red line reflects the actual number of seats won (23).  Not too far off!
 
 ![image](images/OldDem_NewDem_Linear.png?raw=true)
 
