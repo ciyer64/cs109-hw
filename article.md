@@ -18,5 +18,7 @@ Not a bad start, but the fact that our expected number of seats (i.e. where the 
 ![image](images/Senate_Seats_Weighted.png?raw=true)
 Caption: Our results after giving different polls more weight, compared to the actual number of seats won (23).  Close, but can we do better?
 
+Okay, so we're doing a bit better.  But is this enough?
+
 ![image](images/Senate_Seats_Weighted_Unbiased.png?raw=true)
 Caption: Our results after giving different polls more weight and removing a bias factor, compared to the actual number of seats won (23).  Not bad!
